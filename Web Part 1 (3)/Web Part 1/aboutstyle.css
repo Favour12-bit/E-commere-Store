@@ -1,0 +1,87 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #ffffff;
+    padding: 15px 0;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-img {
+    width: 150px;
+    height: auto;
+}
+
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.navbar nav ul li a:hover {
+    color: #000;
+}
+
+/* Banner Section */
+.banner {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.banner img {
+    width: 33%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* About Us Section */
+.about-us {
+    background-color: #f5e4d6; /* Light beige color similar to the image */
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.about-us .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-us h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.about-us p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}

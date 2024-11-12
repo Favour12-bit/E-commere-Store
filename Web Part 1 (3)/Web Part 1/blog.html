@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PastTimes Blog</title>
+    <link rel="stylesheet" href="blogstyle.css">
+    <style>
+        /* Reset some default styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .logo {
+            width: 150px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            font-size: 1em;
+        }
+
+        /* Hero Section styling */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px;
+            background-color: #fafafa;
+        }
+
+        .hero-content {
+            max-width: 50%;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+        }
+
+        /* Blog Section styling */
+        .blog {
+            padding: 50px;
+            background-color: #ffffff;
+        }
+
+        .blog h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        .blog-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .blog-post {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .blog-post:hover {
+            transform: translateY(-10px);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-post h3 {
+            font-size: 1.5em;
+            color: #333;
+            margin: 15px;
+        }
+
+        .blog-post p {
+            color: #666;
+            margin: 0 15px 15px 15px;
+            font-size: 1em;
+            line-height: 1.6;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin: 15px;
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Section -->
+    <header class="navbar">
+        <img src="screenshot.jpg" alt="PastTimes Logo" class="logo">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="account.html">Account</a></li>
+                <li><a href="index.html">Login/Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Give Your Old Style A New Style!</h1>
+            <p>Style isn’t always about trends. It’s about confidence. Consistent choices build timeless fashion. True style will follow.</p>
+        </div>
+        <div class="hero-image">
+            <img src="about us clothing1.webp" alt="Clothing Rack Image">
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog">
+        <h2>PastTimes Blog</h2>
+        <div class="blog-container">
+            <!-- Blog Post 1 -->
+            <article class="blog-post">
+                <img src="clothes background.jpg" alt="Blog Post 1" class="blog-image">
+                <h3>Discovering Vintage Styles</h3>
+                <p>Explore the charm of vintage fashion and how it continues to influence modern trends...</p>
+                <a href="#" class="read-more">Read More →</a>
+            </article>
+            <!-- Blog Post 2 -->
+            <article class="blog-post">
+                <img src="clothing 16.jpeg" alt="Blog Post 2" class="blog-image">
+                <h3>Timeless Accessories for Every Outfit</h3>
+                <p>Learn how timeless accessories can elevate your style and complete any look...</p>
+                <a href="#" class="read-more">Read More →</a>
+            </article>
+            <!-- Blog Post 3 -->
+            <article class="blog-post">
+                <img src="shoes 2.jpeg" alt="Blog Post 3" class="blog-image">
+                <h3>Mixing Modern with Vintage</h3>
+                <p>How to blend modern styles with vintage elements to create unique looks...</p>
+                <a href="#" class="read-more">Read More →</a>
+            </article>
+        </div>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vintage Maroon Dress - PastTimes</title>
+    <link rel="stylesheet" href="productstyle.css">
+</head>
+
+<body>
+    <!-- Header Section with Logo and Nav -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="screenshot.jpg" alt="PastTimes Logo" class="logo-img">
+            </div>
+            <nav>
+                <ul>
+                    <ul class="nav-links">
+                        <li><a href="homepage.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="account.html">Account</a></li>
+                        <li><a href="index.html">Login/Register</a></li>
+                    </ul>
+                    <!-- Cart Icon -->
+                    <li>
+                        <a href="javascript:void(0);" onclick="toggleCartWidget()">
+                            <img src="shopping_cart.png" alt="Cart" class="cart-icon"> 
+                            (<span class="cart-count">0</span>)
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="product-page">
+        <div class="container">
+            <!-- Product Card Section -->
+            <div class="card_container">
+                <!-- Product Card 1 -->
+                <div class="card">
+                    <img src="clothing 2.jpg" alt="Vintage Dress 1">
+                    <div class="card_content">
+                        <h3>Vintage Maroon Dress</h3>
+                        <p class="price">$79.99</p>
+                        <p class="description">This beautiful vintage-style dress brings timeless elegance to your
+                            wardrobe. Perfect for formal events or adding a touch of retro charm to your day-to-day
+                            look.</p>
+                        <button class="btn" onclick="addToCart('Vintage Maroon Dress', 79.99)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="card">
+                    <img src="clothing 3.jpeg" alt="Vintage Dress 2">
+                    <div class="card_content">
+                        <h3>Classic Black Dress</h3>
+                        <p class="price">$69.99</p>
+                        <p class="description">A versatile and elegant black dress suitable for any occasion, from
+                            casual outings to formal gatherings.</p>
+                        <button class="btn" onclick="addToCart('Classic Black Dress', 69.99)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="card">
+                    <img src="shoes 2.jpeg" alt="Stylish Shoes">
+                    <div class="card_content">
+                        <h3>Stylish Red Heels</h3>
+                        <p class="price">$49.99</p>
+                        <p class="description">Step out in style with these elegant red heels, perfect for adding a pop
+                            of color to any outfit.</p>
+                        <button class="btn" onclick="addToCart('Stylish Red Heels', 49.99)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View More Button Section -->
+            <div class="view_more_section">
+                <a href="products.html" class="view_more_btn">View More Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Widget (Initially Hidden) -->
+    <div class="cart-widget">
+        <div class="cart-widget-header">
+            <h3>Your Cart</h3>
+            <button class="close-btn" onclick="toggleCartWidget()">Close</button>
+        </div>
+        <div class="cart-items"></div>
+        <div class="cart-widget-footer">
+            <a href="cart.html">Go to Cart</a>
+        </div>
+    </div>
+
+
+    <script>
+        // Function to handle adding items to the cart
+        function addToCart(itemName, itemPrice) {
+            // Get cart data from localStorage (if any)
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Check if item already exists in cart
+            const existingItemIndex = cart.findIndex(item => item.name === itemName);
+
+            if (existingItemIndex !== -1) {
+                // Update quantity if item exists
+                cart[existingItemIndex].quantity += 1;
+            } else {
+                // Add new item to cart
+                cart.push({
+                    name: itemName,
+                    price: itemPrice,
+                    quantity: 1
+                });
+            }
+
+            // Save updated cart back to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Show alert and refresh page
+            alert(`${itemName} has been added to your cart.`);
+            updateCartCount();
+        }
+
+        // Function to update cart count in the header
+        function updateCartCount() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            document.querySelector('.cart-count').textContent = cart.length;
+        }
+
+        // Function to display the cart widget
+        function toggleCartWidget() {
+            const widget = document.querySelector('.cart-widget');
+            widget.classList.toggle('active');
+            displayCartItems();
+        }
+
+        // Function to display cart items in the widget
+        function displayCartItems() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartContainer = document.querySelector('.cart-widget .cart-items');
+            cartContainer.innerHTML = '';
+
+            if (cart.length === 0) {
+                cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+            } else {
+                cart.forEach(item => {
+                    const itemElement = document.createElement('div');
+                    itemElement.classList.add('cart-item');
+                    itemElement.innerHTML = `
+                        <p><strong>${item.name}</strong> - $${item.price} x ${item.quantity}</p>
+                    `;
+                    cartContainer.appendChild(itemElement);
+                });
+            }
+        }
+
+        // Update cart count on page load
+        window.onload = function() {
+            updateCartCount();
+        };
+    </script>
+</body>
+
+</html>
